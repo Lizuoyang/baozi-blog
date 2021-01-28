@@ -31,6 +31,8 @@
 				<a href="/">
 					<img src="/image/logo.png" alt="Quiet">
 				</a>
+				<div id="binft" style="margin-left: 10px"></div>
+				
 			</div>
 			<div class="h-right">
 				<ul>
@@ -233,6 +235,47 @@
 		<script>
 			$(function () { $(window).scroll(function () { if ($(document).scrollTop() > 100) { $(".header-top").removeClass("header-move2"); $('.header-top').addClass('header-move1') } else { $(".header-top").removeClass("header-move1"); $('.header-top').addClass('header-move2') } }) });
 		</script>
+		 <script>
+    var binft = function (r) {
+      function t() {
+        return b[Math.floor(Math.random() * b.length)]
+      }  
+      function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+      }
+      function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+          var l = document.createElement("span");
+          l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+      }
+      function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : (c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+      }
+      var l = "",
+      o = ["我们这一生很短，我们终将会失去它，所以不妨大胆一点", "爱一个人，攀一座山，追一次梦，不妨大胆一点，有很多事没有答案", "值得拥有的东西，永远都是来之不易", "一直坚持的东西，总有一天反过来拥抱你", "得之坦然，失之淡然，争其必然，顺其自然"].map(function (r) {
+      return r + ""
+      }),
+      a = 2,
+      g = 1,
+      s = 5,
+      d = 75,
+      b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)", "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"],
+      c = {
+        text: "",
+        prefixP: -s,
+        skillI: 0,
+        skillP: 0,
+        direction: "forward",
+        delay: a,
+        step: g
+      };
+      i()
+      };
+      binft(document.getElementById('binft'));
+  </script>
 
 <div class="header-bg">
     <div class="bg-content">
@@ -250,14 +293,14 @@
             
             <p class="h5">2021</p>
             
-            <a href="/2021/01/28/hello-world/" class="list-group-item list-group-item-action">
-                <span class="archive-post-title">Hello World</span>
+            <a href="/2021/01/28/test/" class="list-group-item list-group-item-action">
+                <span class="archive-post-title">测试文章</span>
                 <time style="float: right;">01-28</time>
             </a>
             
             
-            <a href="/2021/01/28/test/" class="list-group-item list-group-item-action">
-                <span class="archive-post-title">测试文章</span>
+            <a href="/2021/01/28/hello-world/" class="list-group-item list-group-item-action">
+                <span class="archive-post-title">Hello World</span>
                 <time style="float: right;">01-28</time>
             </a>
             
